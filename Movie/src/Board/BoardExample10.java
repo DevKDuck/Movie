@@ -24,21 +24,21 @@ public class BoardExample10 {
 	
 	
 	public void setList() {
-		Board board = new Board();
-		board.setBno(1);
-		board.setBcontent("게시판에 오신 것을 환영합니다.");
-		board.setBwriter("winter");
-		board.setBtitle("게시판에 오신 것을 환영합니다.");
-		board.setBdate("2024.01.27");
+		Board board = new Board(1, "게시판에 오신 것을 환영합니다.", "게시판에 오신 것을 환영합니다.", "winter","2024.01.27");
+//		board.setBno(1);
+//		board.setBcontent("게시판에 오신 것을 환영합니다.");
+//		board.setBwriter("winter");
+//		board.setBtitle("게시판에 오신 것을 환영합니다.");
+//		board.setBdate("2024.01.27");
 		
 		boardArr.add(board);
 		
-		Board board2 = new Board();
-		board2.setBno(2);
-		board2.setBcontent("올 겨울은 많이 춥습니다.");
-		board2.setBwriter("winter");
-		board2.setBtitle("올 겨울은 많이 춥습니다.");
-		board2.setBdate("2024.01.27");
+		Board board2 = new Board(2, "올 겨울은 많이 춥습니다.","올 겨울은 많이 춥습니다.","winter","2024.01.27");
+//		board2.setBno(2);
+//		board2.setBcontent("올 겨울은 많이 춥습니다.");
+//		board2.setBwriter("winter");
+//		board2.setBtitle("올 겨울은 많이 춥습니다.");
+//		board2.setBdate("2024.01.27");
 		boardArr.add(board2);
 	}
 	
@@ -106,13 +106,13 @@ public class BoardExample10 {
 		
 		if(menuNo.equals("1")) {
 			//할일 : 입력된 정보를 기준으로 객체를 생성하여 배열에 저장 하는 기능을 구현한다 
-			Board board = new Board();
-			board.setBno(num++);
-			board.setBtitle(title);
-			board.setBwriter(writer);
-			board.setBcontent(content);
-			board.setBdate(nowDate());
-			
+			Board board = new Board(num++, title, content, writer, nowDate());
+//			board.setBno(num++);
+//			board.setBtitle(title);
+//			board.setBwriter(writer);
+//			board.setBcontent(content);
+//			board.setBdate(nowDate());
+//			
 			
 			//boardArr에 추가하는것 까지 완료
 			boardArr.add(board);
@@ -184,12 +184,12 @@ public class BoardExample10 {
 		
 		if(menuNo.equals("1")) {
 			//할일 : 입력된 정보를 기준으로 객체를 생성하여 배열에 저장 하는 기능을 구현한다 
-			Board board = new Board();
-			board.setBno(idx);
-			board.setBtitle(title);
-			board.setBwriter(writer);
-			board.setBcontent(content);
-			board.setBdate(nowDate());
+			Board board = new Board(idx, title, content, writer, nowDate());
+//			board.setBno(idx);
+//			board.setBtitle(title);
+//			board.setBwriter(writer);
+//			board.setBcontent(content);
+//			board.setBdate(nowDate());
 			
 			//boardArr에 추가하는것 까지 완료
 			boardArr.set(idx-1,board);

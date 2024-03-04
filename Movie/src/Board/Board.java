@@ -10,6 +10,17 @@ public class Board {
 	private String bdate;
 	
 	
+	public Board(int bno, String btitle, String bcontent, String bwriter, String bdate) {
+		this.bno = bno;
+		this.btitle = btitle;
+		this.bcontent = bcontent;
+		this.bwriter = bwriter;
+		this.bdate = bdate;
+	}
+	
+	
+	
+	
 	public int getBno() {
 		return bno;
 	}
