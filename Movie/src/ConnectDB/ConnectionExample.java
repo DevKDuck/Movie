@@ -3,6 +3,7 @@ package ConnectDB;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class ConnectionExample {
 	public static void main(String[] args) {
@@ -13,10 +14,16 @@ public class ConnectionExample {
 
 			//연결하기
 			conn = DriverManager.getConnection(
-					"jdbc:oracle:thin:@localhost:1521/xe",
-					"bituser",
-					"1004"
+					"jdbc:oracle:thin:@localhost:1521/xe", 
+					"bituser", //계정이름
+					"1004" //계정 비밀번호
 					);
+			// Statement 를 이용하여 변경하기 
+	         Statement stmt = conn.createStatement();
+	         int updated = stmt.executeUpdate("INSERT INTO users (userid, username, userpassword, userage, useremail) VALUES ('hong1', '홍길동', '1004', 20, 'hong@naver.com')");
+	         System.out.println("변경 건수  : " + updated);
+	        
+			
 			
 			System.out.println("연결 성공");
 		} catch (ClassNotFoundException e) {
