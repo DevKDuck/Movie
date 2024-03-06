@@ -1,12 +1,15 @@
 package Board;
 
 import java.time.LocalDate;
+
+
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 //게시판을 관리 클래스 
 
 import java.util.Scanner;
+
 
 public class BoardExample10 {
 	private static int num = 3; //인덱스
