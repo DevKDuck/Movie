@@ -8,12 +8,9 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 /**
- * oracle 11g -> 
- * 	ojdbc6.jar -> jdk8 이하
- * 	ojdbc7.jar -> jdk8 이하
- *  ojdbc8.jar -> jdk17 이상
+ * 간단하게 update 만 확인 
  */
-public class ConnectionExample {
+public class ConnectionExample3 {
 	public static void main(String[] args) {
 		Connection conn = null;
 		try {
@@ -29,28 +26,20 @@ public class ConnectionExample {
 			
 			System.out.println("연결 성공");
 			
-			//preparedstatement - ?,? 물음표로 인자를 받을 수 있다.
-			//PreparedStatement 를 이용하여 데이터 삽입
-			
-			PreparedStatement pstmt = conn.prepareStatement("INSERT INTO users (userid, username, userpassword, userage, useremail) VALUES (?,?,?,?,?)");
+//			PreparedStatement 를 이용하여 데이터 삭제
+			PreparedStatement pstmt = conn.prepareStatement("delete from users where userid=?");
 			Scanner scanner = new Scanner(System.in);
 			while(true) {
-				System.out.print("아이디 입력 : ");
+				System.out.print("삭제 자료를 찾기 위한 아이디 입력 : ");
 				String userid = scanner.nextLine();
 				if (userid.equals("q")) break;
-	
+				
 				//입력 값을 설정 한다
 				pstmt.setString(1, userid);
-				pstmt.setString(2, "홍길동");
-				pstmt.setString(3, "1004");
-				pstmt.setInt(4, 20);
-				pstmt.setString(5, "hong1@naver.com");
-				
-				System.out.println("입력된 아이디 : " + userid);
 				
 				int updated = pstmt.executeUpdate();
 				//변경된 건 수 
-				System.out.println("변경 건수  : " + updated);
+				System.out.println("삭제 건수  : " + updated);
 			}
 			
 			
